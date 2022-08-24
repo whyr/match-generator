@@ -1,2 +1,5 @@
-# match-generator
-Library that generate matches from a list of teams
+# Match Generators
+
+## Summary
+
+Library that allows the generation of matches rounds to create a league.
