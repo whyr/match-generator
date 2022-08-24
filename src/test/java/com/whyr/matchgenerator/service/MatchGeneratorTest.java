@@ -15,20 +15,27 @@ class MatchGeneratorTest {
     void test() {
 
         List<String> teams = new ArrayList<>();
-        for (int t = 1; t < 10; t++) {
-            teams.add("Team " + t);
-        }
+        teams.add("Medvedev");
+        teams.add("Zverev");
+        teams.add("Nadal");
+        teams.add("Alcaraz");
+        teams.add("Tsitsipas");
+        teams.add("Djokovic");
+        teams.add("Ruud");
+        teams.add("Auger-Aliassime");
+        teams.add("Norrie");
 
-        System.out.println(teams.toString());
+        System.out.println(teams);
 
         List<Match<String>> matches = matchGenerator.generateMatches(teams);
 
         matches.forEach(
-                match -> System.out.println(match.getRound() + ": " + match.getTeam1() + " vs " + match.getTeam2())
+                match -> System.out.println("Round " + match.getRound() + ": " +
+                        match.getTeam1() + " vs " + match.getTeam2())
         );
 
         Assertions.assertEquals(1, matches.get(0).getRound());
-        Assertions.assertEquals("Team 5", matches.get(0).getTeam1());
-        Assertions.assertEquals("Team 1", matches.get(0).getTeam2());
+        Assertions.assertEquals("Tsitsipas", matches.get(0).getTeam1());
+        Assertions.assertEquals("Medvedev", matches.get(0).getTeam2());
     }
 }
