@@ -10,6 +10,15 @@ public class MatchGenerator<T> {
 
     public List<Match<T>> generateMatches(List<T> teamList) {
 
+        return generateMatches(teamList, Boolean.FALSE);
+    }
+
+    public List<Match<T>> generateMatches(List<T> teamList, Boolean shuffle) {
+
+        if (shuffle) {
+            Collections.shuffle(teamList);
+        }
+
         List<Match<T>> createdMatches = new ArrayList<>();
 
         int numberOfRounds = teamList.size() - 1;
